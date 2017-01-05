@@ -5,10 +5,7 @@ const bodyParser = require('body-parser');
 var app = express();
 
 app.get('/', function(req, res){
-  res.send('hello world!');
-    if(req.url === '/'){
-    req.url = '/index.html';
-  }
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/buzzwords', function(req, res){
